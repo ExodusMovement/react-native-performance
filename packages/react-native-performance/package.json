@@ -1,17 +1,13 @@
 {
-  "name": "@shopify/react-native-performance",
+  "name": "@exodus/react-native-performance",
   "version": "4.1.2",
   "description": "A library for measuring the render times for the different flows in your app.",
-  "publishConfig": {
-    "access": "public",
-    "@shopify:registry": "https://registry.npmjs.org/"
-  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "keywords": [
     "react-native"
   ],
-  "author": "shopify",
+  "author": "ExodusMovement",
   "license": "MIT",
   "scripts": {
     "build": "tsc -b",
@@ -20,12 +16,12 @@
     "test": "tsc -b && yarn jest"
   },
   "bugs": {
-    "url": "https://github.com/shopify/react-native-performance/issues"
+    "url": "https://github.com/ExodusMovement/react-native-performance/issues"
   },
-  "homepage": "https://github.com/shopify/react-native-performance#readme",
+  "homepage": "https://github.com/ExodusMovement/react-native-performance#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shopify/react-native-performance.git"
+    "url": "git+https://github.com/ExodusMovement/react-native-performance.git"
   },
   "peerDependencies": {
     "@babel/runtime": "*",
