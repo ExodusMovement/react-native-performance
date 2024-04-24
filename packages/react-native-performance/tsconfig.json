@@ -3,7 +3,8 @@
   "compilerOptions": {
     "tsBuildInfoFile": "dist/tsconfig.tsbuildinfo",
     "outDir": "./dist",
-    "rootDir": "./src"
+    "rootDir": "./src",
+    "target":"ES6"
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "**/*.test.ts?(x)"]
