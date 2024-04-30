@@ -1,4 +1,4 @@
-import {getNativeTime} from './utils';
+import { getNativeTime } from './utils';
 
 export class BridgedEventTimestampBuilder {
   private _nativeTimestamp: Promise<number> | undefined;
@@ -34,7 +34,7 @@ export class BridgedEventTimestampBuilder {
       return new BridgedEventTimestamp(Date.now(), this._nativeTimestamp);
     }
 
-    const {jsNowWithEpochReference, nativeTimestampWithEpochReference} = translateNativeTimestampToEpochReference(
+    const { jsNowWithEpochReference, nativeTimestampWithEpochReference } = translateNativeTimestampToEpochReference(
       this._nativeTimestamp,
     );
     return new BridgedEventTimestamp(jsNowWithEpochReference, nativeTimestampWithEpochReference);
@@ -60,6 +60,9 @@ export default class BridgedEventTimestamp {
   readonly jsTimestamp: number;
 
   constructor(jsTimestamp: number, nativeTimestamp: Promise<number> | undefined) {
+    if (jsTimestamp && typeof jsTimestamp !== 'number') {
+      throw new Error('Invalid jsTimestamp type');
+    }
     this.jsTimestamp = jsTimestamp;
     this.nativeTimestamp = nativeTimestamp;
   }
@@ -86,7 +89,7 @@ function translateNativeTimestampToEpochReference(nativeTimestampWithSystemBootR
 
   const nativeTimestampWithEpochReference = Promise.all([getNativeTime(), nativeTimestampWithSystemBootReference]).then(
     ([
-      {nativeTimeSinceEpochMillis: nativeNowWithEpochReference, nativeUptimeMillis: nativeNowWithSystemBootReference},
+      { nativeTimeSinceEpochMillis: nativeNowWithEpochReference, nativeUptimeMillis: nativeNowWithSystemBootReference },
       nativeTimestampWithSystemBootReference,
     ]) => {
       // If the JS <-> native communication were instantaneous, the nativeTimeSinceEpochMillis === jsNowWithEpochReference.

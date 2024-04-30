@@ -1,6 +1,6 @@
 {
   "name": "@exodus/react-native-performance",
-  "version": "4.1.2-rc.1",
+  "version": "4.1.2-rc.2",
   "description": "A library for measuring the render times for the different flows in your app.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
