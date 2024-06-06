@@ -4,7 +4,7 @@
   <img src="assets/header.png" alt="React Native Performance logo" width="650">
 </p>
 
-# @shopify/react-native-performance
+# @shopify/react-native-performance test
 
 Performance measurement for your React Native apps.
 
